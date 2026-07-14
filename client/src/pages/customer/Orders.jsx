@@ -57,21 +57,6 @@ const OrderCard = ({ order }) => (
         {STATUS_LABELS[order.status]}
       </span>
     </div>
-    
-    {/* Address Section */}
-    {order.address && (
-      <div className="mb-3 rounded-lg bg-gray-50 p-3 text-sm">
-        <p className="font-semibold text-ink-900">Delivery Address</p>
-        <p className="text-ink-700">{order.address.street}</p>
-        <p className="text-ink-700">
-          {order.address.city}, {order.address.state} - {order.address.pincode}
-        </p>
-        {order.address.phone && (
-          <p className="text-ink-700">Phone: {order.address.phone}</p>
-        )}
-      </div>
-    )}
-    
     <StatusTracker status={order.status} />
     <div className="mt-4 space-y-1 text-sm text-ink-700">
       {order.items.map((item, i) => (
